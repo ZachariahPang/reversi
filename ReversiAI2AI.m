@@ -27,23 +27,26 @@ pass = 0;
 k = 1;
 while pass < 2 % exit with pass = 1
     % put the stone and reverse stones captured
-%     [u,currentColor,pass] = AIrand(u,currentColor,pass); 
+    [u,currentColor,pass] = AIrand(u,currentColor,pass); 
+%     [u,currentColor,pass] = AImaxflip(u,currentColor,pass);
 %     [u,currentColor,pass] = AIpositionvalue(u,currentColor,pass);            
 %     [u,currentColor,pass] = AItreetop3(u,currentColor,pass,5,3+floor(k/5));            
 %      k = k + 1;
     pause(0.15)
 %     [u,currentColor,pass] = AItree(u,currentColor,pass,3);  
-    [u,currentColor,pass] = AIMCTS(u,currentColor,pass,3000+k*10,40,10);
+%     [u,currentColor,pass] = AIMCTS(u,currentColor,pass,3000+k*10,40,10);
 %     [u,currentColor,pass] = AItreetop3(u,currentColor,pass,4,5);            
 %     [u,currentColor,pass] = AItree2level(u,currentColor,pass);   
-    pause(0.15)
+
 %     gif;
+    [u,currentColor,pass] = AImaxpos(u,currentColor,pass);
 %     [u,currentColor,pass] = AIrand(u,currentColor,pass);    
 %     [u,currentColor,pass] = AItree2level(u,currentColor,pass);   
 %     [u,currentColor,pass] = AItreetop3(u,currentColor,pass,4,4);            
 %     [u,currentColor,pass] = AItree(u,currentColor,pass,3);  
 %     [u,currentColor,pass] = AIMCTS(u,currentColor,pass,20+floor(k/1),30); 
-    [u,currentColor,pass] = AIMCTS(u,currentColor,pass,3000+k*10,40);
+%     [u,currentColor,pass] = AIMCTS(u,currentColor,pass,3000+k*10,40);
+    pause(0.15)
     k = k + 1;
 %     pause;
 %     gif;
