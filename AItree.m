@@ -6,7 +6,7 @@ function [u,currentColor,pass] = AItree(u,currentColor,pass,depth)
 
 %% Get all possible location and value
 [validPosition,value,tempPass] = positionvalue(u,currentColor,depth);
-% showvalue(validPosition,value,currentColor);
+showvalue(validPosition,value,currentColor);
 if tempPass % no valid position, then pass
    pass = pass + 1;
    currentColor = - currentColor;

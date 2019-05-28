@@ -54,11 +54,11 @@ while pass < 2 % exit with two consective pass
     if flipNum && pass < 2 % flip (pass = 0) or pass (pass = 1)
         pause(0.25);
 %         [u,currentColor,pass] = AImaxflip(u,currentColor,pass);
-        [u,currentColor,pass] = AImaxpos(u,currentColor,pass);
+%         [u,currentColor,pass] = AImaxpos(u,currentColor,pass);
 %             [u,currentColor,pass] = AIrand(u,currentColor,pass); 
     %             [u,currentColor,pass] = AIpositionvalue(u,currentColor,pass);            
     %             [u,currentColor,pass] = AItree2level(u,currentColor,pass);    
-    %             [u,currentColor,pass] = AItree(u,currentColor,pass,3);            
+%                 [u,currentColor,pass] = AItree(u,currentColor,pass,3);            
 %                 [u,currentColor,pass] = AItreetop3(u,currentColor,pass,4,4);   
 %         [u,currentColor,pass] = AIMCTS(u,currentColor,pass,2000+k*10,40,10);
         searchN(k) = searchNum;

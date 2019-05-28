@@ -26,7 +26,7 @@ if isempty(p) % no empty space
 end
 p = p(randperm(length(p)));
 pass = pass + 1;
-if length(p) <= 8
+if length(p) <= 0
     flipNum = 0;
     for i = 1:length(p)
         [~,~,flipNum_new] = putstone(u,p(i),currentColor,0); 
