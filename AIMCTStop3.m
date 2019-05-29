@@ -1,4 +1,4 @@
-function  [u,currentColor,pass] = AIMCTS(u,currentColor,pass,N,switchNum,pweight)
+function  [u,currentColor,pass] = AIMCTStop3(u,currentColor,pass,N,switchNum,topN)
 %% AIMCTS Monte Carlo Tree Search
 %
 %  [u,currentColor,pass] = AIMCTS(u,currentColor,pass,N,switchNum)
@@ -49,6 +49,13 @@ if length(nodePosition) == 1 && nextPass == 0 % only one valide move
     pass = 0;
     return
 end
+%% Pruning
+% top3 pruning
+[value,idx] = sort(value,1,'descend');
+reducedTopN = min([length(idx) topN]);
+value = value(1:reducedTopN);
+validPosition = validPosition(idx(1:reducedTopN));
+%% Initilization
 firstLevelIdx = 2:(length(value)+1);
 nodePosition(firstLevelIdx) = validPosition;
 node2child(1,1) = 2;

@@ -14,7 +14,7 @@ if isempty(p) % no empty space
     pass = 2;
     return
 end
-%% Permute location and randomly put a stone
+%% Permute location and randomly put astone
 p = p(randperm(length(p)));
 pass = pass + 1;
 for i = 1:length(p)

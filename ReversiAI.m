@@ -17,8 +17,7 @@
 % - May 22.  AI MCTS
 
 %% Initialize the game and draw the center stones
-% plotboard; 
-u = zeros(8,8);
+u = zeros(8,8,'int8');
 u(4,4) = 1;
 u(5,5) = 1;
 u(4,5) = -1;
@@ -41,7 +40,8 @@ while pass < 2 % exit with two consective pass
         pass = pass + 1;
         currentColor = - currentColor;
         flipNum = 1;
-    else
+    else % inside the board
+        flipNum = 0;
         p = sub2ind([8,8],i,j);
         if u(i,j) == 0 % no stone
             % put the stone and reverse stones captured
@@ -51,16 +51,15 @@ while pass < 2 % exit with two consective pass
             end
         end        
     end
-    if flipNum && pass < 2 % flip (pass = 0) or pass (pass = 1)
-        pause(0.25);
-%         [u,currentColor,pass] = AImaxflip(u,currentColor,pass);
-%         [u,currentColor,pass] = AImaxpos(u,currentColor,pass);
+    if flipNum % flip (pass = 0) or pass (pass = 1)
+        pause(0.5);
 %             [u,currentColor,pass] = AIrand(u,currentColor,pass); 
-    %             [u,currentColor,pass] = AIpositionvalue(u,currentColor,pass);            
-    %             [u,currentColor,pass] = AItree2level(u,currentColor,pass);    
-%                 [u,currentColor,pass] = AItree(u,currentColor,pass,3);            
-%                 [u,currentColor,pass] = AItreetop3(u,currentColor,pass,4,4);   
-%         [u,currentColor,pass] = AIMCTS(u,currentColor,pass,2000+k*10,40,10);
+                [u,currentColor,pass] = myAIpositionvalue(u,currentColor,pass);            
+%                 [u,currentColor,pass] = AItree2level(u,currentColor,pass);    
+    %             [u,currentColor,pass] = AItree(u,currentColor,pass,3);            
+%                 [u,currentColor,pass] = AItreetop3(u,currentColor,pass,3,6);   
+%         [u,currentColor,pass] = AIMCTS(u,currentColor,pass,3000+k*10,40,1);
+%         [u,currentColor,pass] = AIMCTStop3(u,currentColor,pass,3000+k*10,40,8);
         searchN(k) = searchNum;
         searchNum = 0;
         k = k + 1;    
@@ -69,11 +68,12 @@ end
 searchN = searchN(1:k-1,1);
 figure; plot(searchN,'-*');
 %% Count 
-switch sign(sum(u(:)))
+win = int8(sum(u(:)));
+switch sign(win)
     case 1
-        msgbox('Black Wins!')
+        msgbox('Black win'); disp(compose('Black Wins %d',win));
     case -1
-        msgbox('White Wins')
+        msgbox('White Wins'); disp(compose('White Wins %d',-win));
     case 0
-        msgbox('Tie')
+        msgbox('Tie'); disp('Tie');
 end
