@@ -32,8 +32,8 @@ while pass < 2 % exit with pass = 1
 %     [u,currentColor,pass] = AItreetop3(u,currentColor,pass,5,3+floor(k/5));            
 %      k = k + 1;
 %     pause(0.01)
-%     [u,currentColor,pass] = AItree(u,currentColor,pass,3);  
-     [u,currentColor,pass] = myAIpositionvalue(u,currentColor,pass);
+    [u,currentColor,pass] = AItree(u,currentColor,pass,3);  
+%      [u,currentColor,pass] = myAIpositionvalue(u,currentColor,pass);
 %     [u,currentColor,pass] = AIMCTS(u,currentColor,pass,3000+k*10,40,1);
 %     [u,currentColor,pass] = AItreetop3(u,currentColor,pass,3,6);            
 %     [u,currentColor,pass] = AItree2level(u,currentColor,pass);   
