@@ -1,4 +1,4 @@
-function [u,currentColor,pass] = AItree(u,currentColor,pass,depth)
+function [u,currentColor,pass] = myAItree(u,currentColor,pass,depth)
 %% AItree put a stone by tree search
 %
 %

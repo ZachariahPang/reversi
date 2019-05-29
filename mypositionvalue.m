@@ -21,9 +21,14 @@ pos_weight = 10*[90 2 6 6 6 6 2 90;
                  6 3 5 4 4 5 3 6;
                  2 1 3 3 3 3 1 2;
                  90 2 6 6 6 6 2 90];
+             
+             
+          
 
 validPosition = find(u(:)==0);
 value = zeros(length(validPosition),1);
+
+
 if isempty(validPosition) 
     tempPass = 1;
     return

@@ -54,9 +54,9 @@ while pass < 2 % exit with two consective pass
     if flipNum % flip (pass = 0) or pass (pass = 1)
         pause(0.5);
 %             [u,currentColor,pass] = AIrand(u,currentColor,pass); 
-                [u,currentColor,pass] = myAIpositionvalue(u,currentColor,pass);            
+%                 [u,currentColor,pass] = myAIpositionvalue(u,currentColor,pass);            
 %                 [u,currentColor,pass] = AItree2level(u,currentColor,pass);    
-    %             [u,currentColor,pass] = AItree(u,currentColor,pass,3);            
+                [u,currentColor,pass] = myAItree(u,currentColor,pass,3);            
 %                 [u,currentColor,pass] = AItreetop3(u,currentColor,pass,3,6);   
 %         [u,currentColor,pass] = AIMCTS(u,currentColor,pass,3000+k*10,40,1);
 %         [u,currentColor,pass] = AIMCTStop3(u,currentColor,pass,3000+k*10,40,8);
