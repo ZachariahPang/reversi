@@ -1,4 +1,4 @@
-function [validPosition,value,tempPass] = mypositionvalue(u,currentColor,depth)
+function [validPosition,value,tempPass] = mypositionvalue(u,currentColor,~)
 % flipNum and position weight are both taken in consideration.
 
 % if two valid positions have same weight value,
